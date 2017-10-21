@@ -1,0 +1,42 @@
+Ingrediente: moluscos código CODI1 (alergénico)
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Molusco
+Ingrediente: altramuz código CODI2 (alergénico)
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Anagyris_foetida
+Ingrediente: lechuga código CODI3 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Lechuga
+Ingrediente: pollo código CODI4 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Pollo
+	Se ha proporcionado una foto para el ingrediente en la ruta imagenes/pollo.jpg
+Ingrediente: queso código CODI5 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Queso
+	Se ha proporcionado una foto para el ingrediente en la ruta imagenes/queso.jpg
+Ingrediente: cereales código CODI6 (alergénico)
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Cereal
+Ingrediente: crustÃ¡ceos código CODI7 (alergénico)
+Ingrediente: huevos código CODI8 (alergénico)
+	Se ha proporcionado una foto para el ingrediente en la ruta imagenes/huevos.jpg
+Ingrediente: pescado código CODI9 (alergénico)
+	Se ha proporcionado una foto para el ingrediente en la ruta imagenes/pescado.jpg
+Ingrediente: cacahuetes código CODI10 (alergénico)
+Ingrediente: pan código CODI11 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Pan
+Ingrediente: soja código CODI12 (alergénico)
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Soja
+Ingrediente: leche código CODI13 (alergénico)
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Leche
+	Se ha proporcionado una foto para el ingrediente en la ruta imagenes/leche.jpg
+Ingrediente: frutos secos código CODI14 (alergénico)
+Ingrediente: apio código CODI15 (alergénico)
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Apio
+Ingrediente: mostaza código CODI16 (alergénico)
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Mostaza
+Ingrediente: semillas de sÃ©samo código CODI17 (alergénico)
+Ingrediente: diÃ³xito de azufre código CODI18 (alergénico)
+Ingrediente: croutons código CODI19 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Crouton
+Ingrediente: tomate código CODI20 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Tomate
+Ingrediente: pepinillo código CODI21 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Pepino
+Ingrediente: chocolate código CODI22 
+	Se puede consultar más información en http://es.wikipedia.org/wiki/Chocolate

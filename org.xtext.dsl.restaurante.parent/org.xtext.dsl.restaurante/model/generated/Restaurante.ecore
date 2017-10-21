@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="restaurante" nsURI="http://www.xtext.org/dsl/restaurante/Restaurante"
+    nsPrefix="restaurante">
+  <eClassifiers xsi:type="ecore:EClass" name="Restaurante">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fecha" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ingredientes" upperBound="-1"
+        eType="#//Ingrediente" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productos" upperBound="-1"
+        eType="#//Producto" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
+        eType="#//Menu" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ingrediente">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="infoURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alergenico" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Producto">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nutricional" eType="#//Nutricional"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Principal" eSuperTypes="#//Producto">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ensalada" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ingredientes" unique="false"
+        upperBound="-1" eType="#//Ingrediente"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="salsa" eType="#//SalsaRecomendada"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Complemento" eSuperTypes="#//Producto"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bebida" eSuperTypes="#//Producto"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BebidaFria" eSuperTypes="#//Bebida">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distribuidor" eType="#//Distribuidor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BebidaCaliente" eSuperTypes="#//Bebida"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Postre" eSuperTypes="#//Producto">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="helado" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distribuidor" eType="#//Distribuidor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ingredientes" unique="false"
+        upperBound="-1" eType="#//Ingrediente"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Nutricional">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cantidad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unidad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="energia" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grasas" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hidratos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proteinas" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Menu">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tamanio" eType="#//TamanioMenu"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productos" eType="#//ProductoY"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductoY">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="izq" eType="#//ProductoO"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="der" upperBound="-1" eType="#//ProductoO"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductoO">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="izq" eType="#//Producto"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="der" unique="false" upperBound="-1"
+        eType="#//Producto"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SalsaRecomendada">
+    <eLiterals name="NINGUNA" literal="NINGUNA"/>
+    <eLiterals name="ACEITE_Y_VINAGRE" value="1" literal="ACEITE_Y_VINAGRE"/>
+    <eLiterals name="CESAR" value="2" literal="CESAR"/>
+    <eLiterals name="MODENA" value="3" literal="MODENA"/>
+    <eLiterals name="MOSTAZA" value="4" literal="MOSTAZA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TamanioMenu">
+    <eLiterals name="NORMAL" literal="NORMAL"/>
+    <eLiterals name="GRANDE" value="1" literal="GRANDE"/>
+    <eLiterals name="NORMAL_Y_GRANDE" value="2" literal="NORMAL_Y_GRANDE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Distribuidor">
+    <eLiterals name="COCA_COLA" literal="COCA_COLA"/>
+    <eLiterals name="AQUABONA" value="1" literal="AQUABONA"/>
+    <eLiterals name="MAHOU" value="2" literal="MAHOU"/>
+    <eLiterals name="ALVALLE" value="3" literal="ALVALLE"/>
+    <eLiterals name="TROPICANA" value="4" literal="TROPICANA"/>
+    <eLiterals name="OREO" value="5" literal="OREO"/>
+    <eLiterals name="MILKA" value="6" literal="MILKA"/>
+    <eLiterals name="DANONE" value="7" literal="DANONE"/>
+  </eClassifiers>
+</ecore:EPackage>

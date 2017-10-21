@@ -1,0 +1,26 @@
+Restaurantes "AsturDonals" fecha 30-10-2013
+
+Ingredientes {
+	Ingrediente: CODI1 'moluscos' infoURL: http://es.wikipedia.org/wiki/Molusco alergenico
+	Ingrediente: CODI2 'altramuz' infoURL: http://es.wikipedia.org/wiki/Anagyris_foetida alergenico
+	Ingrediente: CODI3 'lechuga' infoURL: http://es.wikipedia.org/wiki/Lechuga
+	Ingrediente: CODI4 'pollo' infoURL: http://es.wikipedia.org/wiki/Pollo foto: "pollo.jpg"
+	Ingrediente: CODI5 'queso' infoURL: http://es.wikipedia.org/wiki/Queso foto: "queso.jpg"
+	Ingrediente: CODI6 'cereales' infoURL: http://es.wikipedia.org/wiki/Cereal alergenico
+	Ingrediente: CODI7 'crustáceos' alergenico
+	Ingrediente: CODI8 'huevos' foto: "huevos.jpg" alergenico
+	Ingrediente: CODI9 'pescado' foto: "pescado.jpg" alergenico
+	Ingrediente: CODI10 'cacahuetes' alergenico
+	Ingrediente: CODI11 'pan' infoURL: http://es.wikipedia.org/wiki/Pan
+	Ingrediente: CODI12 'soja' infoURL: http://es.wikipedia.org/wiki/Soja alergenico
+	Ingrediente: CODI13 'leche' infoURL: http://es.wikipedia.org/wiki/Leche foto: "leche.jpg" alergenico
+	Ingrediente: CODI14 'frutos secos' alergenico
+	Ingrediente: CODI15 'apio' infoURL: http://es.wikipedia.org/wiki/Apio alergenico
+	Ingrediente: CODI16 'mostaza' infoURL: http://es.wikipedia.org/wiki/Mostaza alergenico
+	Ingrediente: CODI17 'semillas de sésamo' alergenico
+	Ingrediente: CODI18 'dióxito de azufre' alergenico
+	Ingrediente: CODI19 'croutons' infoURL: http://es.wikipedia.org/wiki/Crouton
+	Ingrediente: CODI20 'tomate' infoURL: http://es.wikipedia.org/wiki/Tomate
+	Ingrediente: CODI21 'pepinillo' infoURL: http://es.wikipedia.org/wiki/Pepino
+	Ingrediente: CODI22 'chocolate' infoURL: http://es.wikipedia.org/wiki/Chocolate 
+}

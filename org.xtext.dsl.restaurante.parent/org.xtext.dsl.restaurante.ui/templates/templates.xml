@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+<template id="1" autoinsert="true" context="org.xtext.dsl.restaurante.Restaurante.kw_Ingrediente:" deleted="false" description="Ayuda a insertar un nuevo ingrediente" enabled="true" name="Ingrediente">Ingrediente: CODI${numero} '${nombre}' infoURL: http://${urlInfo} foto: "${nombreFoto}"
+</template>
+<template id="2" autoinsert="true" context="org.xtext.dsl.restaurante.Restaurante.Producto" deleted="false" description="Ayuda a insertar un nuevo producto principal" enabled="true" name="Producto Principal">	Principal: CODP${numero} '${nombre}' {&#13;
+		Descripcion: '${descripcion}'&#13;
+		Foto: '${foto}'&#13;
+		Ingredientes: ${ingredientes:CrossReference(Principal.ingredientes)}&#13;
+		Salsa recomendada: ${salsa:Enum(SalsaRecomendada)}&#13;
+		Nutricional {&#13;
+			cantidad: ${cantidad} medida: '${medida}'&#13;
+			energia: ${energia}&#13;
+			grasas: ${grasas}&#13;
+			hidratos: ${hidratos}&#13;
+			proteinas: ${proteinas}&#13;
+			sal: ${sal}&#13;
+		}&#13;
+	}
+</template>
+</templates>

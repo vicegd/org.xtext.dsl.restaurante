@@ -1,0 +1,119 @@
+grammar org.xtext.dsl.restaurante.Restaurante with org.eclipse.xtext.common.Terminals
+
+generate restaurante "http://www.xtext.org/dsl/restaurante/Restaurante"
+
+Restaurante:
+	'Restaurantes' nombre=STRING 
+	'fecha' fecha = FECHA
+	'Ingredientes' '{'
+		ingredientes+=Ingrediente*
+	'}'
+	'Productos' '{'
+		productos+=Producto*
+	'}' 
+	'Menus' '{'
+		menus+=Menu*
+	'}'
+;
+
+Ingrediente:
+	'Ingrediente:' name=ID 
+	nombre=STRING
+	('infoURL:' infoURL=URL)?
+	('foto:' foto=STRING)?
+	(alergenico?='alergenico')? 
+;
+
+Producto:
+	Principal | Complemento | Bebida | Postre
+;
+
+Principal:
+	'Principal:' name=ID nombre=STRING (ensalada?='ensalada')? '{'
+		'Descripcion:' descripcion=STRING
+		'Foto:' foto=STRING
+		('Ingredientes:' ingredientes+=[Ingrediente] (',' ingredientes+=[Ingrediente])*)?
+		'Salsa recomendada:' salsa=SalsaRecomendada
+		('Nutricional' nutricional=Nutricional)?
+	'}'
+;
+
+Complemento :
+	'Complemento:' name=ID nombre=STRING '{'
+		'Descripcion:' descripcion=STRING
+		'Foto:' foto=STRING
+		('Nutricional' nutricional=Nutricional)?
+	'}'
+;
+
+Bebida:
+	BebidaFria | BebidaCaliente
+;
+
+BebidaFria:
+	'Bebida fria:' name=ID nombre=STRING '{'
+		'Descripcion:' descripcion=STRING
+		'Distribuidor:' distribuidor=Distribuidor
+		'Foto:' foto=STRING
+		('Nutricional' nutricional=Nutricional)?
+	'}'
+;
+
+BebidaCaliente:
+	'Bebida caliente:' name=ID nombre=STRING '{'
+		'Descripcion:' descripcion=STRING
+		'Foto:' foto=STRING
+		('Nutricional' nutricional=Nutricional)?
+	'}'
+;
+
+Postre:
+	'Postre:' name=ID nombre=STRING (helado?='helado')? '{'
+		'Descripcion:' descripcion=STRING
+		('Distribuidor:' distribuidor=Distribuidor)?
+		'Foto:' foto=STRING
+		('Ingredientes:' ingredientes+=[Ingrediente] (',' ingredientes+=[Ingrediente])*)?
+		('Nutricional' nutricional=Nutricional)?
+	'}'
+;
+
+Nutricional: '{'
+	'cantidad:' cantidad=Float
+	'medida:' unidad=STRING
+	'energia:' energia=Float
+	'grasas:' grasas=Float
+	'hidratos:' hidratos=Float
+	'proteinas:' proteinas=Float
+	'sal:' sal=Float
+	'}'
+;	
+
+Menu:
+	'Menu:' name=ID nombre=STRING '{'
+		'Descripcion:' descripcion=STRING
+		'Tamaño:' tamanio=TamanioMenu
+		'Foto:' foto=STRING
+		('Productos:' productos=ProductoY)?
+	'}'
+;
+
+ProductoY:
+	izq=ProductoO ('Y' der+=ProductoO)*
+;
+
+ProductoO:
+	izq=[Producto] | '(' izq=[Producto] ('O' der+=[Producto])* ')' 
+;
+
+Float: INT (',' INT)?;
+enum SalsaRecomendada: NINGUNA | ACEITE_Y_VINAGRE | CESAR | MODENA | MOSTAZA;
+enum TamanioMenu: NORMAL | GRANDE | NORMAL_Y_GRANDE;
+enum Distribuidor: COCA_COLA | AQUABONA | MAHOU | ALVALLE | TROPICANA | OREO | MILKA | DANONE;
+terminal FECHA:
+  '0'..'9' '0'..'9' '-'
+  '0'..'9' '0'..'9' '-'
+  '0'..'9' '0'..'9' '0'..'9' '0'..'9'
+;
+terminal URL:
+    ('http' | 'https') '://' ('a'..'z'|'A'..'Z'|'_'|'-'|'('|')'|'\\'|'/'|'.'|'0'..'9')+
+ ;
